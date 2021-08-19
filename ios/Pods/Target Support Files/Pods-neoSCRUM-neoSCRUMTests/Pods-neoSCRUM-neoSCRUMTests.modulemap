@@ -1,0 +1,6 @@
+module Pods_neoSCRUM_neoSCRUMTests {
+  umbrella header "Pods-neoSCRUM-neoSCRUMTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
