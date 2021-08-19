@@ -104,7 +104,7 @@ const RootTabNav = () => {
           title: 'Feedbacks',
           tabBarColor: '#009387',
           tabBarIcon: ({color}) => (
-            <Icons size={24} color={color} type="feather" name="file-text" />
+            <Icons size={23} color={color} type="feather" name="file-text" />
           ),
         }}
       />
