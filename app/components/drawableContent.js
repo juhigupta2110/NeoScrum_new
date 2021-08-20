@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   drawerItemStyle: {
     height: hp('3.75%'),
     backgroundColor: '#f9f6db',
-    marginVertical: hp('1.25%'),
+    marginVertical: hp('1.26%'),
   },
   textStyle: {
     fontSize: hp('1.75%'),
