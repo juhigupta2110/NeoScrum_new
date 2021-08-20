@@ -5,10 +5,8 @@ import {
   Text,
   TouchableOpacity,
   TextInput,
-  Dimensions,
   StyleSheet,
   Platform,
-  Image,
   StatusBar,
   KeyboardAvoidingView,
 } from 'react-native';
@@ -21,8 +19,6 @@ import * as Animatable from 'react-native-animatable';
 import Icons from 'react-native-vector-icons/Feather';
 import IconsFeather from 'react-native-vector-icons/FontAwesome';
 import {connect} from 'react-redux';
-import axios from 'axios';
-import LOGIN_URL from '../api/url';
 
 import {apiService} from '../libs/apiCall';
 import {globalStyles} from '../style/global/globalStyles';
@@ -94,15 +90,7 @@ class SignInScreen extends React.Component {
     let data = {
       email: this.state.email,
       password: this.state.password,
-      // email: 'rohit.kp.pandey@gmail.com',
-      // password: 'VVSyoI1nDW',
     };
-
-    // const res = await this.props.loginAsync(data);
-
-    // console.log('after const res....', res);
-
-    // this.onResponse(res);
 
     apiService.signIn(data, this.onResponse, 'post');
   };
@@ -245,11 +233,6 @@ class SignInScreen extends React.Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    // loginAsync: ({email, password}) =>
-    //   dispatch({
-    //     type: 'LOGIN_ASYNC',
-    //     payload: {email: email, password: password},
-    //   }),
     loginNewUser: ({email, token, name, feedbacks}) =>
       dispatch({
         type: 'LOGIN',
@@ -292,14 +275,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#f2f2f2',
+    borderBottomColor: Colors.GREY,
     paddingBottom: hp('0.625%'),
   },
   actionError: {
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#FF0000',
+    borderBottomColor: Colors.RED,
     paddingBottom: hp('0.625%'),
   },
   textInput: {
@@ -309,7 +292,7 @@ const styles = StyleSheet.create({
     color: Colors.InputTextColor,
   },
   errorMsg: {
-    color: '#FF0000',
+    color: Colors.RED,
     fontSize: hp('1.75%'),
   },
   button: {

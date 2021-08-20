@@ -1,38 +1,12 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  Dimensions,
-  StyleSheet,
-  Platform,
-  StatusBar,
-  ScrollView,
-  FlatList,
-  ImageBackground,
-  Image,
-  SafeAreaView,
-} from 'react-native';
+
+import {View, StyleSheet, Platform, FlatList} from 'react-native';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
-import LinearGradient from 'react-native-linear-gradient';
-import * as Animatable from 'react-native-animatable';
-import Icons from 'react-native-vector-icons/Feather';
-import IconsFeather from 'react-native-vector-icons/FontAwesome';
-import {
-  Appbar,
-  Card,
-  Title,
-  Paragraph,
-  Provider as PaperProvider,
-} from 'react-native-paper';
 import {connect} from 'react-redux';
-import axios from 'axios';
-import Header from '../components/header';
-import Footer from '../components/footer';
+
 import FeedbackViewComp from '../components/feedbackViewComp';
 import {Colors} from '../style/colors/colors';
 
@@ -130,14 +104,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#f2f2f2',
+    borderBottomColor: Colors.GREY,
     paddingBottom: hp('0.625%'),
   },
   actionError: {
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#FF0000',
+    borderBottomColor: Colors.RED,
     paddingBottom: hp('0.625%'),
   },
   textInput: {
@@ -147,7 +121,7 @@ const styles = StyleSheet.create({
     color: Colors.InputTextColor,
   },
   errorMsg: {
-    color: '#FF0000',
+    color: Colors.RED,
     fontSize: hp('1.75%'),
   },
   button: {

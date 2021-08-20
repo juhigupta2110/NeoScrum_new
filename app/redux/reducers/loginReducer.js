@@ -1,5 +1,3 @@
-import {Types} from '../actions/users';
-
 const loginReducer = (state = {feedbacks: []}, action) => {
   switch (action.type) {
     case 'LOGIN':

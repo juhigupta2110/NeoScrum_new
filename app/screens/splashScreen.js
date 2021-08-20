@@ -1,11 +1,11 @@
 import React from 'react';
+
 import {
   View,
   Text,
   TouchableOpacity,
   Dimensions,
   StyleSheet,
-  Image,
 } from 'react-native';
 import {
   widthPercentageToDP as wp,
@@ -14,7 +14,9 @@ import {
 import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import Icons from 'react-native-vector-icons/MaterialIcons';
+
 import {Colors} from '../style/colors/colors';
+
 const SplashScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
@@ -40,7 +42,11 @@ const SplashScreen = ({navigation}) => {
               colors={[Colors.LIGHTYELLOW, Colors.DARKYELLOW]}
               style={styles.signIn}>
               <Text style={styles.textSign}>Get Started</Text>
-              <Icons name="navigate-next" color="white" size={hp('2.5%')} />
+              <Icons
+                name="navigate-next"
+                color={Colors.WHITE}
+                size={hp('2.5%')}
+              />
             </LinearGradient>
           </TouchableOpacity>
         </View>
@@ -82,7 +88,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   text: {
-    color: 'grey',
+    color: Colors.GREY,
     marginTop: hp('0.625%'),
   },
   button: {

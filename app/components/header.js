@@ -8,6 +8,8 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
+import {Colors} from '../style/colors/colors';
+
 const Header = (props) => {
   console.log('inside header props...');
   console.log(props);
@@ -19,11 +21,7 @@ const Header = (props) => {
         style={{marginHorizontal: wp('2.5%')}}
       />
       <View style={styles.usernameStyle}>
-        <Text style={styles.headerText}>
-          {/* getting name from the redux store */}
-          {props?.user?.username}
-          {/* {props?.route?.params?.name || ''} */}
-        </Text>
+        <Text style={styles.headerText}>{props?.user?.username}</Text>
       </View>
     </SafeAreaView>
   );
@@ -43,16 +41,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
-    backgroundColor: '#009387',
+    backgroundColor: Colors.GREEN,
   },
 
   headerText: {
     fontWeight: 'bold',
     fontSize: hp('2.5%'),
-    color: '#ffff',
+    color: Colors.WHITE,
     letterSpacing: 1,
   },
-  usernameStyle: {
-    // marginLeft: 10,
-  },
+  usernameStyle: {},
 });

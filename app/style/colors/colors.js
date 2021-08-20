@@ -20,4 +20,8 @@ export const Colors = {
   DisabledButton: '#cccbc9',
   EnabledButtonGrad1: '#f7df80',
   EnabledButtonGrad2: '#e5bf27',
+  drawerItemColor: '#f9f6db',
+  drawerItemTextColor: '#f77c2a',
+  choosePicButtonColor: '#e3e3e5',
+  tabYellowColor: '#efa862',
 };

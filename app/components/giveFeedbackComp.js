@@ -59,7 +59,6 @@ class GiveFeedbackComp extends React.Component {
           <View style={styles.imageComp}>
             <Avatar.Image
               size={hp('18.75%')}
-              // source={{uri: `asset:/${this.props.photo}`}}
               source={require('../assets/pic8.jpeg')}
             />
             <Text style={styles.nameStyle}>{this.state.name}</Text>

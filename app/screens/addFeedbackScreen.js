@@ -116,14 +116,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#f2f2f2',
+    borderBottomColor: Colors.GREY,
     paddingBottom: hp('0.625%'),
   },
   actionError: {
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#FF0000',
+    borderBottomColor: Colors.RED,
     paddingBottom: hp('0.625%'),
   },
   textInput: {
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
     color: Colors.InputTextColor,
   },
   errorMsg: {
-    color: '#FF0000',
+    color: Colors.RED,
     fontSize: hp('1.75%'),
   },
   button: {

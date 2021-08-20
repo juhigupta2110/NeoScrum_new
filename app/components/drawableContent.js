@@ -7,6 +7,8 @@ import {
 import {View, Text, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 
+import {Colors} from '../style/colors/colors';
+
 class DrawableContent extends React.Component {
   constructor(props) {
     super(props);
@@ -61,12 +63,12 @@ const styles = StyleSheet.create({
   mainViewStyle: {backgroundColor: 'rgba(255,255,255,0.5)'},
   drawerItemStyle: {
     height: hp('3.75%'),
-    backgroundColor: '#f9f6db',
+    backgroundColor: Colors.drawerItemColor,
     marginVertical: hp('1.26%'),
   },
   textStyle: {
     fontSize: hp('1.75%'),
     marginHorizontal: wp('2.5%'),
-    color: '#f77c2a',
+    color: Colors.drawerItemTextColor,
   },
 });

@@ -1,5 +1,4 @@
 import {StyleSheet} from 'react-native';
-import {LinearGradient} from 'react-native-linear-gradient';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -15,7 +14,7 @@ export const globalStyles = StyleSheet.create({
     paddingTop: hp('10%'),
   },
   formHeadingStyle: {
-    fontSize: 25,
+    fontSize: hp('3.125%'),
     fontWeight: '500',
   },
   textInputStyle: {
@@ -23,7 +22,7 @@ export const globalStyles = StyleSheet.create({
     width: wp('80%'),
     borderBottomWidth: 1,
     borderBottomColor: Colors.grey,
-    fontSize: 20,
+    fontSize: hp('2.5%'),
   },
   chooseViewStyle: {
     marginTop: hp('5%'),
@@ -38,7 +37,7 @@ export const globalStyles = StyleSheet.create({
     width: wp('35%'),
     height: hp('5%'),
     borderWidth: 1,
-    borderColor: Colors.grey,
+    borderColor: Colors.GREY,
     borderRadius: 2,
     marginRight: wp('1%'),
   },
@@ -52,7 +51,7 @@ export const globalStyles = StyleSheet.create({
     width: wp('25%'),
     height: hp('5%'),
     borderWidth: 1,
-    borderColor: Colors.grey,
+    borderColor: Colors.GREY,
     borderRadius: 5,
     marginLeft: wp('15%'),
     marginTop: hp('3%'),
@@ -61,7 +60,7 @@ export const globalStyles = StyleSheet.create({
   },
   submitTextStyle: {
     color: Colors.WHITE,
-    fontSize: 16,
+    fontSize: hp('2%'),
   },
 
   registerHereStyle: {
@@ -72,7 +71,7 @@ export const globalStyles = StyleSheet.create({
 
   registerHereTextStyle: {
     color: Colors.ORANGE,
-    fontSize: 15,
+    fontSize: hp('1.875%'),
   },
   errorInputViewStyle: {
     alignSelf: 'flex-start',
@@ -80,5 +79,9 @@ export const globalStyles = StyleSheet.create({
   },
   errorFormInputStyle: {
     color: Colors.RED,
+  },
+  drawerNavigatorStyle: {
+    backgroundColor: 'rgba(0,0,0,0.6)',
+    width: wp('50%'),
   },
 });

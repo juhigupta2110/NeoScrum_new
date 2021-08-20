@@ -8,11 +8,12 @@ import SignUpScreen from './screens/signUpScreen';
 import FeedbackScreen from '../app/screens/feedbackScreen';
 import AddFeedbackScreen from './screens/addFeedbackScreen';
 import DrawableContent from '../app/components/drawableContent';
-import {NavigationContainer} from '@react-navigation/native';
 import Header from '../app/components/header';
-import {View} from 'react-native-animatable';
 import Icons from 'react-native-vector-icons/Feather';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+
+import {globalStyles} from './style/global/globalStyles';
+import {Colors} from '../app/style/colors/colors';
 
 const Stack = createNativeStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -62,7 +63,7 @@ const NeoScrumApp = () => {
 const RootDrawerNav = () => {
   return (
     <Drawer.Navigator
-      drawerStyle={{backgroundColor: 'rgba(0,0,0,0.6)', width: 200}}
+      drawerStyle={globalStyles.drawerNavigatorStyle}
       initialRouteName="RootTabNav"
       screenOptions={{
         headerShown: false,
@@ -86,12 +87,12 @@ const RootTabNav = () => {
   return (
     <Tab.Navigator
       initialRouteName="FeedbackScreen"
-      activeColor="#fff"
+      activeColor={Colors.WHITE}
       shifting={true}
       labeled={true}
-      inactiveColor="#000"
+      inactiveColor={Colors.BLACK}
       barStyle={{
-        backgroundColor: '#009387',
+        backgroundColor: Colors.GREEN,
       }}>
       <Tab.Screen
         name="FeedbackScreen"
@@ -100,9 +101,14 @@ const RootTabNav = () => {
           headerShown: false,
 
           title: 'Feedbacks',
-          tabBarColor: '#009387',
+          tabBarColor: Colors.GREEN,
           tabBarIcon: ({color}) => (
-            <Icons size={23} color={color} type="feather" name="file-text" />
+            <Icons
+              size={hp('2.875%')}
+              color={color}
+              type="feather"
+              name="file-text"
+            />
           ),
         }}
       />
@@ -113,9 +119,9 @@ const RootTabNav = () => {
           headerShown: false,
 
           title: 'Add Feedback',
-          tabBarColor: '#efa862',
+          tabBarColor: Colors.tabYellowColor,
           tabBarIcon: ({color}) => (
-            <Icons size={24} color={color} type="feather" name="edit" />
+            <Icons size={hp('3%')} color={color} type="feather" name="edit" />
           ),
         }}
       />

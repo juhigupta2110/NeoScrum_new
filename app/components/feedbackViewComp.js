@@ -83,13 +83,11 @@ export default FeedbackViewComp;
 
 const styles = StyleSheet.create({
   imgBgStyle: {
-    //flex: 1,
     height: dimension.height,
     width: dimension.width,
   },
 
   mainComp: {
-    // flex: 1,
     width: '80%',
     height: '80%',
     borderWidth: 1,

@@ -19,9 +19,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import Icons from 'react-native-vector-icons/Feather';
 import IconsFeather from 'react-native-vector-icons/FontAwesome';
-import {launchCamera, launchImageLibrary} from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 import FormData from 'form-data';
-import axios from 'axios';
 import {connect} from 'react-redux';
 
 import {globalStyles} from '../style/global/globalStyles';
@@ -296,14 +295,14 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#f2f2f2',
+    borderBottomColor: Colors.GREY,
     paddingBottom: hp('0.625%'),
   },
   actionError: {
     flexDirection: 'row',
     marginTop: hp('1.25%'),
     borderBottomWidth: 1,
-    borderBottomColor: '#FF0000',
+    borderBottomColor: Colors.RED,
     paddingBottom: hp('0.625%'),
   },
   textInput: {
@@ -313,7 +312,7 @@ const styles = StyleSheet.create({
     color: Colors.InputTextColor,
   },
   errorMsg: {
-    color: '#FF0000',
+    color: Colors.RED,
     fontSize: hp('1.75%'),
   },
   button: {
@@ -338,7 +337,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: hp('6.25%'),
     marginTop: hp('6.25%'),
-    color: '#05375a',
+    color: Colors.InputTextColor,
   },
   buttonChoose: {
     width: '120%',
@@ -347,7 +346,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     borderRadius: 4,
     borderWidth: 1,
-    borderColor: '#e3e3e5',
+    borderColor: Colors.choosePicButtonColor,
   },
 
   textChoose: {
