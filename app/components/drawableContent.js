@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
+
 import {
-  DrawerContentScrollView,
-  DrawerItem,
-  DrawerItemList,
-} from '@react-navigation/drawer';
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {View, Text, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 
 class DrawableContent extends React.Component {
@@ -14,7 +14,7 @@ class DrawableContent extends React.Component {
 
   render() {
     return (
-      <View style={{backgroundColor: 'rgba(255,255,255,0.5)'}}>
+      <View style={styles.mainViewStyle}>
         <View style={styles.drawerItemStyle}>
           <Text
             style={styles.textStyle}
@@ -58,14 +58,15 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(null, mapDispatchToProps)(DrawableContent);
 
 const styles = StyleSheet.create({
+  mainViewStyle: {backgroundColor: 'rgba(255,255,255,0.5)'},
   drawerItemStyle: {
-    height: 30,
+    height: hp('3.75%'),
     backgroundColor: '#f9f6db',
-    marginVertical: 10,
+    marginVertical: hp('1.25%'),
   },
   textStyle: {
-    fontSize: 14,
-    marginHorizontal: 10,
+    fontSize: hp('1.75%'),
+    marginHorizontal: wp('2.5%'),
     color: '#f77c2a',
   },
 });
