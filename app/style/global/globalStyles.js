@@ -5,7 +5,7 @@ import {
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
 
-import {colors} from '../colors/colors';
+import {Colors} from '../colors/colors';
 
 export const globalStyles = StyleSheet.create({
   formViewStyle: {
@@ -22,7 +22,7 @@ export const globalStyles = StyleSheet.create({
     marginTop: hp('5%'),
     width: wp('80%'),
     borderBottomWidth: 1,
-    borderBottomColor: colors.grey,
+    borderBottomColor: Colors.grey,
     fontSize: 20,
   },
   chooseViewStyle: {
@@ -38,12 +38,12 @@ export const globalStyles = StyleSheet.create({
     width: wp('35%'),
     height: hp('5%'),
     borderWidth: 1,
-    borderColor: colors.grey,
+    borderColor: Colors.grey,
     borderRadius: 2,
     marginRight: wp('1%'),
   },
   chooseTextStyle: {
-    color: colors.black,
+    color: Colors.BLACK,
     fontSize: 16,
   },
   submitButtonStyle: {
@@ -52,15 +52,15 @@ export const globalStyles = StyleSheet.create({
     width: wp('25%'),
     height: hp('5%'),
     borderWidth: 1,
-    borderColor: colors.grey,
+    borderColor: Colors.grey,
     borderRadius: 5,
     marginLeft: wp('15%'),
     marginTop: hp('3%'),
     alignSelf: 'flex-start',
-    backgroundColor: colors.blue,
+    backgroundColor: Colors.BLUE,
   },
   submitTextStyle: {
-    color: colors.white,
+    color: Colors.WHITE,
     fontSize: 16,
   },
 
@@ -71,7 +71,7 @@ export const globalStyles = StyleSheet.create({
   },
 
   registerHereTextStyle: {
-    color: colors.orange,
+    color: Colors.ORANGE,
     fontSize: 15,
   },
   errorInputViewStyle: {
@@ -79,6 +79,6 @@ export const globalStyles = StyleSheet.create({
     marginLeft: wp('10%'),
   },
   errorFormInputStyle: {
-    color: colors.red,
+    color: Colors.RED,
   },
 });

@@ -4,12 +4,13 @@ import {
   Text,
   StyleSheet,
   ImageBackground,
-  Image,
   Dimensions,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-
-import {Avatar} from 'react-native-paper';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {Colors} from '../style/colors/colors';
 
 const dimension = Dimensions.get('window');
 
@@ -22,31 +23,29 @@ const FeedbackViewComp = (item) => {
 
   switch (rand) {
     case 1:
-      bg = '#f7ea85';
+      bg = Colors.HeaderColor1;
       break;
 
     case 2:
-      bg = '#fb3f9f4';
+      bg = Colors.HeaderColor2;
       break;
 
     case 3:
-      bg = '#f7c58f';
+      bg = Colors.HeaderColor3;
       break;
 
     case 4:
-      bg = '#7badf7';
+      bg = Colors.HeaderColor4;
       break;
 
     case 5:
-      bg = '#f490ae';
+      bg = Colors.HeaderColor5;
       break;
 
     default:
-      bg = '#f490ae';
+      bg = Colors.HeaderColor1;
       break;
   }
-
-  console.log('value of bg is ....' + bg);
 
   return (
     <ImageBackground
@@ -62,8 +61,8 @@ const FeedbackViewComp = (item) => {
       ) : (
         <View style={styles.mainComp}>
           <View style={[styles.headerStyle, {backgroundColor: bg}]}>
-            <Text style={{fontSize: 16}}>Feedbacks</Text>
-            <Text style={{fontSize: 16}}>in 6 hours</Text>
+            <Text style={styles.feedbackTextStyle}>Feedbacks</Text>
+            <Text style={styles.feedbackTextStyle}>in 6 hours</Text>
           </View>
 
           <View style={styles.feedbackComp}>
@@ -94,13 +93,13 @@ const styles = StyleSheet.create({
     width: '80%',
     height: '80%',
     borderWidth: 1,
-    borderColor: 'grey',
-    marginHorizontal: 50,
+    borderColor: Colors.GREY,
+    marginHorizontal: wp('12.5%'),
     alignItems: 'center',
-    backgroundColor: 'white',
+    backgroundColor: Colors.WHITE,
     alignSelf: 'center',
     marginTop: '10%',
-    paddingHorizontal: 10,
+    paddingHorizontal: wp('2.5%'),
   },
   headerStyle: {
     flexDirection: 'row',
@@ -108,13 +107,13 @@ const styles = StyleSheet.create({
     width: '90%',
     height: '10%',
     alignItems: 'center',
-    marginVertical: 10,
+    marginVertical: hp('1.25%'),
     justifyContent: 'space-around',
-    paddingHorizontal: 10,
-    shadowColor: '#000',
+    paddingHorizontal: wp('2.5%'),
+    shadowColor: Colors.BLACK,
     shadowOffset: {
       width: 0,
-      height: 4,
+      height: hp('0.5%'),
     },
     shadowOpacity: 0.3,
     shadowRadius: 4.65,
@@ -125,20 +124,20 @@ const styles = StyleSheet.create({
     width: '90%',
     height: '50%',
     borderWidth: 0.5,
-    borderColor: 'grey',
-    marginVertical: 20,
-    padding: 10,
+    borderColor: Colors.GREY,
+    marginVertical: hp('2.5%'),
+    padding: wp('2.5%'),
   },
   feedbackCompText: {
     fontWeight: 'bold',
-    fontSize: 20,
-    color: 'grey',
+    fontSize: hp('5%'),
+    color: Colors.GREY,
   },
   nameComp: {
     width: '90%',
     height: '10%',
     marginRight: '5%',
-    borderColor: 'grey',
+    borderColor: Colors.GREY,
     marginVertical: '20%',
 
     alignItems: 'flex-end',
@@ -146,5 +145,8 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     flex: 1,
+  },
+  feedbackTextStyle: {
+    fontSize: hp('2%'),
   },
 });

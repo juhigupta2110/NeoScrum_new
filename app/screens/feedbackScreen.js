@@ -14,6 +14,10 @@ import {
   Image,
   SafeAreaView,
 } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import Icons from 'react-native-vector-icons/Feather';
@@ -30,6 +34,7 @@ import axios from 'axios';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import FeedbackViewComp from '../components/feedbackViewComp';
+import {Colors} from '../style/colors/colors';
 
 class FeedbackScreen extends React.Component {
   constructor(props) {
@@ -44,15 +49,6 @@ class FeedbackScreen extends React.Component {
   }
   // getting data from the redux store :-
   componentDidMount() {
-    // console.log(
-    //   'inside feedback screeen,route, component did mount.....' +
-    //     this.props.route.params.token,
-    // );
-
-    console.log('looking at store from redux......');
-    console.log(this.props.user);
-    console.log('did u see store data? ...');
-
     this.setState({
       token: this.props.user.token,
       feedbacks: this.props.user.feedbacks,
@@ -70,10 +66,6 @@ class FeedbackScreen extends React.Component {
   );
 
   render() {
-    console.log('store data.....');
-    console.log(this.props.user);
-    console.log('state.........', this.state);
-
     return (
       <View style={styles.container}>
         {this.state.feedbacks.length == 0 ? (
@@ -98,7 +90,6 @@ class FeedbackScreen extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log('state insdie mapstate...', state);
   return {
     user: state,
   };
@@ -110,68 +101,68 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    backgroundColor: '#009387',
+    backgroundColor: Colors.GREEN,
   },
   header: {
     flex: 1,
     justifyContent: 'flex-end',
-    paddingHorizontal: 20,
-    paddingBottom: 50,
+    paddingHorizontal: wp('5%'),
+    paddingBottom: hp('6.25%'),
   },
   footer: {
     flex: 3,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.WHITE,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: wp('5%'),
+    paddingVertical: hp('3.75%'),
   },
   text_header: {
-    color: '#fff',
+    color: Colors.WHITE,
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: hp('3.75%'),
   },
   text_footer: {
-    color: '#05375a',
-    fontSize: 18,
+    color: Colors.InputTextColor,
+    fontSize: hp('2.25%'),
   },
   action: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: hp('1.25%'),
     borderBottomWidth: 1,
     borderBottomColor: '#f2f2f2',
-    paddingBottom: 5,
+    paddingBottom: hp('0.625%'),
   },
   actionError: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: hp('1.25%'),
     borderBottomWidth: 1,
     borderBottomColor: '#FF0000',
-    paddingBottom: 5,
+    paddingBottom: hp('0.625%'),
   },
   textInput: {
     flex: 1,
-    marginTop: Platform.OS === 'ios' ? 0 : -12,
-    paddingLeft: 10,
-    color: '#05375a',
+    marginTop: Platform.OS === 'ios' ? 0 : -hp('1.5%'),
+    paddingLeft: wp('2.5%'),
+    color: Colors.InputTextColor,
   },
   errorMsg: {
     color: '#FF0000',
-    fontSize: 14,
+    fontSize: hp('1.75%'),
   },
   button: {
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: hp('6.25%'),
   },
   signIn: {
     width: '100%',
-    height: 50,
+    height: hp('6.25%'),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
   },
   textSign: {
-    fontSize: 18,
+    fontSize: hp('2.25%'),
     fontWeight: 'bold',
   },
   bottom: {
@@ -179,8 +170,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: '20%',
-    backgroundColor: '#009387',
+    backgroundColor: Colors.GREEN,
     borderRightWidth: 1,
-    borderColor: 'darkgreen',
+    borderColor: Colors.DARKGREEN,
   },
 });

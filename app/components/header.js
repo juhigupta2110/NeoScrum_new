@@ -1,8 +1,12 @@
 import React from 'react';
-import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 
+import {View, Text, StyleSheet, SafeAreaView} from 'react-native';
 import {Avatar} from 'react-native-paper';
 import {connect} from 'react-redux';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const Header = (props) => {
   console.log('inside header props...');
@@ -10,9 +14,9 @@ const Header = (props) => {
   return (
     <SafeAreaView style={styles.header}>
       <Avatar.Image
-        size={60}
+        size={hp('7.5%')}
         source={require('../assets/pic3.png')}
-        style={{marginHorizontal: 10}}
+        style={{marginHorizontal: wp('2.5%')}}
       />
       <View style={styles.usernameStyle}>
         <Text style={styles.headerText}>
@@ -35,7 +39,7 @@ export default connect(mapStateToProps)(Header);
 
 const styles = StyleSheet.create({
   header: {
-    height: 120,
+    height: hp('15%'),
     flexDirection: 'row',
     justifyContent: 'flex-start',
     alignItems: 'center',
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
 
   headerText: {
     fontWeight: 'bold',
-    fontSize: 20,
+    fontSize: hp('2.5%'),
     color: '#ffff',
     letterSpacing: 1,
   },

@@ -1,4 +1,5 @@
 import React from 'react';
+
 import {
   View,
   Text,
@@ -6,14 +7,16 @@ import {
   ImageBackground,
   TextInput,
   TouchableOpacity,
-  KeyboardAvoidingView,
 } from 'react-native';
-
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import LinearGradient from 'react-native-linear-gradient';
-
 import {Avatar} from 'react-native-paper';
-import axios from 'axios';
+
 import {apiService} from '../libs/apiCall';
+import {Colors} from '../style/colors/colors';
 
 class GiveFeedbackComp extends React.Component {
   constructor(props) {
@@ -52,17 +55,17 @@ class GiveFeedbackComp extends React.Component {
         <ImageBackground
           source={require('../assets/backgroundNew1.png')}
           resizeMode="cover"
-          style={{height: 500, width: 350}}>
+          style={styles.backgroundImgStyle}>
           <View style={styles.imageComp}>
             <Avatar.Image
-              size={150}
+              size={hp('18.75%')}
               // source={{uri: `asset:/${this.props.photo}`}}
               source={require('../assets/pic8.jpeg')}
             />
             <Text style={styles.nameStyle}>{this.state.name}</Text>
           </View>
 
-          <View style={{width: '90%', marginLeft: 20}}>
+          <View style={styles.inputViewStyle}>
             <TextInput
               placeholder="Write your feedback here"
               style={styles.inputComp}
@@ -87,13 +90,16 @@ class GiveFeedbackComp extends React.Component {
               {this.state.feedback.length == 0 ||
               this.state.feedback.length > 100 ? (
                 <LinearGradient
-                  colors={['white', '#cccbc9']}
+                  colors={[Colors.WHITE, Colors.DisabledButton]}
                   style={styles.signIn}>
                   <Text style={styles.textSign}>Submit</Text>
                 </LinearGradient>
               ) : (
                 <LinearGradient
-                  colors={['#f7df80', '#e5bf27']}
+                  colors={[
+                    Colors.EnabledButtonGrad1,
+                    Colors.EnabledButtonGrad2,
+                  ]}
                   style={styles.signIn}>
                   <Text style={styles.textSign}>Submit</Text>
                 </LinearGradient>
@@ -113,65 +119,67 @@ const styles = StyleSheet.create({
     flex: 1,
 
     borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor: Colors.GREY,
 
     alignItems: 'center',
-    backgroundColor: 'white',
-    marginVertical: 20,
+    backgroundColor: Colors.WHITE,
+    marginVertical: hp('2.5%'),
   },
   imageComp: {
     width: '90%',
     height: '50%',
-    marginTop: 10,
-    padding: 10,
+    marginTop: hp('1.25%'),
+    padding: wp('2.5%'),
     alignItems: 'center',
     justifyContent: 'center',
   },
   feedbackCompText: {
     fontWeight: 'bold',
-    fontSize: 20,
-    color: 'grey',
+    fontSize: hp('2.5%'),
+    color: Colors.GREY,
     borderWidth: 1,
-    borderColor: 'red',
+    borderColor: Colors.RED,
   },
+  inputViewStyle: {width: '90%', marginLeft: wp('5%')},
   nameStyle: {
-    marginVertical: 10,
-    color: 'black',
-    fontSize: 18,
+    marginVertical: hp('1.25%'),
+    color: Colors.BLACK,
+    fontSize: hp('2.25%'),
   },
   inputComp: {
     borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor: Colors.GREY,
 
     height: '40%',
-    backgroundColor: 'white',
+    backgroundColor: Colors.WHITE,
   },
   textSign: {
-    color: 'white',
+    color: Colors.WHITE,
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: hp('2%'),
     letterSpacing: 1,
   },
 
   signIn: {
-    width: 150,
-    height: 40,
+    width: wp('37.5%'),
+    height: hp('5%'),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
     flexDirection: 'row',
     alignSelf: 'flex-end',
-    marginTop: 20,
+    marginTop: hp('2.5%'),
     borderWidth: 0.5,
-    borderColor: 'grey',
+    borderColor: Colors.GREY,
   },
   validationText: {
-    color: 'grey',
+    color: Colors.GREY,
     opacity: 0.8,
   },
   validationTextView: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginHorizontal: 2,
+    marginHorizontal: wp('0.5%'),
   },
+  backgroundImgStyle: {height: hp('100%'), width: wp('87.5%')},
 });

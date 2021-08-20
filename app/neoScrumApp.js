@@ -9,11 +9,9 @@ import FeedbackScreen from '../app/screens/feedbackScreen';
 import AddFeedbackScreen from './screens/addFeedbackScreen';
 import DrawableContent from '../app/components/drawableContent';
 import {NavigationContainer} from '@react-navigation/native';
-// import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Header from '../app/components/header';
 import {View} from 'react-native-animatable';
 import Icons from 'react-native-vector-icons/Feather';
-
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 
 const Stack = createNativeStackNavigator();
@@ -115,9 +113,9 @@ const RootTabNav = () => {
           headerShown: false,
 
           title: 'Add Feedback',
-          tabBarColor: '#e5bf27',
+          tabBarColor: '#efa862',
           tabBarIcon: ({color}) => (
-            <Icons size={24} color={color} type="feather" name="file-text" />
+            <Icons size={24} color={color} type="feather" name="edit" />
           ),
         }}
       />

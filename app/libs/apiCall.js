@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl = 'https://468cd57d6dcf.ngrok.io/';
+const baseUrl = 'https://2f9f20930224.ngrok.io/';
 
 const signUpUrl = baseUrl + 'register';
 const signInUrl = baseUrl + 'DeveloperSignin';

@@ -7,9 +7,14 @@ import {
   StyleSheet,
   Image,
 } from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 import LinearGradient from 'react-native-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 import Icons from 'react-native-vector-icons/MaterialIcons';
+import {Colors} from '../style/colors/colors';
 const SplashScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
@@ -32,10 +37,10 @@ const SplashScreen = ({navigation}) => {
         <View style={styles.button}>
           <TouchableOpacity onPress={() => navigation.navigate('SignInScreen')}>
             <LinearGradient
-              colors={['#08d4c4', '#01ab9d']}
+              colors={[Colors.LIGHTYELLOW, Colors.DARKYELLOW]}
               style={styles.signIn}>
               <Text style={styles.textSign}>Get Started</Text>
-              <Icons name="navigate-next" color="white" size={20} />
+              <Icons name="navigate-next" color="white" size={hp('2.5%')} />
             </LinearGradient>
           </TouchableOpacity>
         </View>
@@ -52,7 +57,7 @@ const height_logo = height * 0.35;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#009387',
+    backgroundColor: Colors.GREEN,
   },
   header: {
     flex: 2,
@@ -61,39 +66,39 @@ const styles = StyleSheet.create({
   },
   footer: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.WHITE,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    paddingVertical: 50,
-    paddingHorizontal: 30,
+    paddingVertical: hp('6.25%'),
+    paddingHorizontal: wp('7.5%'),
   },
   logo: {
     width: height_logo,
     height: height_logo,
   },
   title: {
-    color: '#05375a',
-    fontSize: 30,
+    color: Colors.InputTextColor,
+    fontSize: hp('3.75%'),
     fontWeight: 'bold',
   },
   text: {
     color: 'grey',
-    marginTop: 5,
+    marginTop: hp('0.625%'),
   },
   button: {
     alignItems: 'flex-end',
-    marginTop: 30,
+    marginTop: hp('3.75%'),
   },
   signIn: {
-    width: 150,
-    height: 40,
+    width: wp('37.5%'),
+    height: hp('5%'),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 50,
     flexDirection: 'row',
   },
   textSign: {
-    color: 'white',
+    color: Colors.WHITE,
     fontWeight: 'bold',
   },
 });

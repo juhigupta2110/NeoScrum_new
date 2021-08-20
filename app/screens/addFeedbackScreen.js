@@ -1,43 +1,18 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  TextInput,
-  Dimensions,
-  StyleSheet,
-  Platform,
-  StatusBar,
-  ScrollView,
-  FlatList,
-  ImageBackground,
-  Image,
-  SafeAreaView,
-  KeyboardAvoidingView,
-} from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
-import * as Animatable from 'react-native-animatable';
-import Icons from 'react-native-vector-icons/Feather';
-import IconsFeather from 'react-native-vector-icons/FontAwesome';
-import {
-  Appbar,
-  Card,
-  Title,
-  Paragraph,
-  Provider as PaperProvider,
-} from 'react-native-paper';
-import {connect} from 'react-redux';
-import axios from 'axios';
 
-import Footer from '../components/footer';
+import {StyleSheet, Platform, FlatList, SafeAreaView} from 'react-native';
+import {
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
+import {connect} from 'react-redux';
+
 import GiveFeedbackComp from '../components/giveFeedbackComp';
 import {apiService} from '../libs/apiCall';
+import {Colors} from '../style/colors/colors';
 
 class AddFeedbackScreen extends React.Component {
   onResponse = (res) => {
-    console.log('inside addFeedback .....');
-    console.log(res);
-
     this.setState({
       user: res?.data,
       token: this.props?.route?.params?.token || '',
@@ -60,9 +35,6 @@ class AddFeedbackScreen extends React.Component {
   }
 
   onResponse = (res) => {
-    console.log('inside addFeedback .....');
-    console.log(res);
-
     if (res.status === 200) {
       this.setState({
         user: res?.data,
@@ -85,7 +57,7 @@ class AddFeedbackScreen extends React.Component {
       <SafeAreaView
         style={{
           flex: 1,
-          backgroundColor: 'white',
+          backgroundColor: Colors.WHITE,
           alignItems: 'center',
         }}>
         <FlatList
@@ -93,7 +65,7 @@ class AddFeedbackScreen extends React.Component {
           keyExtractor={(item) => item.email}
           data={this.state.user}
           renderItem={renderItem}
-          style={{marginVertical: 50}}
+          style={{marginVertical: hp('6.25%')}}
         />
       </SafeAreaView>
     );
@@ -113,70 +85,70 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
 
-    backgroundColor: '#009387',
+    backgroundColor: Colors.GREEN,
 
     alignItems: 'center',
   },
   header: {
     flex: 1,
     justifyContent: 'flex-end',
-    paddingHorizontal: 20,
-    paddingBottom: 50,
+    paddingHorizontal: wp('5%'),
+    paddingBottom: hp('6.25%'),
   },
   footer: {
     flex: 3,
-    backgroundColor: '#fff',
+    backgroundColor: Colors.WHITE,
     borderTopLeftRadius: 30,
     borderTopRightRadius: 30,
-    paddingHorizontal: 20,
-    paddingVertical: 30,
+    paddingHorizontal: wp('5%'),
+    paddingVertical: hp('3.75%'),
   },
   text_header: {
-    color: '#fff',
+    color: Colors.WHITE,
     fontWeight: 'bold',
-    fontSize: 30,
+    fontSize: hp('3.75%'),
   },
   text_footer: {
-    color: '#05375a',
-    fontSize: 18,
+    color: Colors.InputTextColor,
+    fontSize: hp('2.25%'),
   },
   action: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: hp('1.25%'),
     borderBottomWidth: 1,
     borderBottomColor: '#f2f2f2',
-    paddingBottom: 5,
+    paddingBottom: hp('0.625%'),
   },
   actionError: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: hp('1.25%'),
     borderBottomWidth: 1,
     borderBottomColor: '#FF0000',
-    paddingBottom: 5,
+    paddingBottom: hp('0.625%'),
   },
   textInput: {
     flex: 1,
-    marginTop: Platform.OS === 'ios' ? 0 : -12,
-    paddingLeft: 10,
-    color: '#05375a',
+    marginTop: Platform.OS === 'ios' ? 0 : -hp('1.5%'),
+    paddingLeft: wp('2.5%'),
+    color: Colors.InputTextColor,
   },
   errorMsg: {
     color: '#FF0000',
-    fontSize: 14,
+    fontSize: hp('1.75%'),
   },
   button: {
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: hp('6.25%'),
   },
   signIn: {
     width: '100%',
-    height: 50,
+    height: hp('6.25%'),
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 10,
   },
   textSign: {
-    fontSize: 18,
+    fontSize: hp('2.25%'),
     fontWeight: 'bold',
   },
   bottom: {
@@ -184,8 +156,8 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: '20%',
-    backgroundColor: '#009387',
+    backgroundColor: Colors.GREEN,
     borderRightWidth: 1,
-    borderColor: 'darkgreen',
+    borderColor: Colors.DARKGREEN,
   },
 });
